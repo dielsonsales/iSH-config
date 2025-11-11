@@ -26,7 +26,9 @@ create_user() {
   else
     echo "Creating user '$USERNAME' with shell $SHELL..."
     adduser "$USERNAME" -D -h "$HOME_DIR" -s "$SHELL"
-    echo "User '$USERNAME' created successfully without a password."
+    echo "Setting password for user '$USERNAME'..."
+    passwd "$USERNAME"
+    echo "User '$USERNAME' created and password set successfully."
   fi
 }
 
